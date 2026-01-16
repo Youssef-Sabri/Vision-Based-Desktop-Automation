@@ -1,7 +1,7 @@
 [project]
 name = "vision-based-desktop-automation"
 version = "0.1.0"
-description = "Add your description here"
+description = "A resilient, vision-driven desktop automation agent for Notepad data entry."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
