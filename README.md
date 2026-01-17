@@ -30,8 +30,8 @@ This project uses `uv` for dependency management.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
-    cd TJM_Labs
+    git clone https://github.com/Youssef-Sabri/Vision-Based-Desktop-Automation
+    cd Vision-Based-Desktop-Automation
     ```
 
 2.  **Install dependencies:**
@@ -64,10 +64,10 @@ uv run generate_proofs.py
 ## 📂 Project Structure
 
 ```
-TJM_Labs/
+Vision-Based-Desktop-Automation/
 ├── src/
-│   ├── detector.py       # Core Vision Logic (ReGround implementation)
-│   ├── bot.py            # Automation & Interaction Logic
+│   ├── detector.py       # Core Vision Logic (Multi-Scale Template Matching)
+│   ├── bot.py            # Automation & Interaction Logic (Strict Focus Gates)
 │   └── api.py            # Data Fetching & Error Handling
 ├── assets/               # Reference Icon Templates
 ├── output/               # Generated Proofs & Logs (Ignored by Git)
@@ -78,6 +78,6 @@ TJM_Labs/
 
 ## 🔬 Technical Details
 
-**The "ReGround" Approach:** 
-Instead of scanning the entire high-resolution desktop for every frame which is computationally expensive and prone to false positives, specific "Region of Interest" (ROI) proposal techniques are adaptable. In this implementation, we utilize optimized multi-scale matching to simulating the robust visual grounding agents described in state-of-the-art UI navigation literature.
+**The "ReGround" approach used in `src/detector.py`:**
+This project adapts the "ReGround" (Region Grounding) reliability concept by implementing a robust **Multi-Scale Template Matching** algorithm. Instead of assuming a fixed icon size, the vision system searches across a scale pyramid (80% to 120% of original size), allowing it to detect the Notepad icon regardless of screen resolution scaling or display settings. This mirrors the "Coarse-to-Fine" refinement step found in advanced UI agents.
 
